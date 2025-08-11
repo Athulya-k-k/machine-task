@@ -177,6 +177,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CORS_ALLOWED_ORIGINS = [
     "https://machine-task-frontend.onrender.com",
+     "https://51.20.117.87.sslip.io",
 ]
 
 
