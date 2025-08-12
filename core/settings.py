@@ -61,7 +61,7 @@ MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     
-    'django.middleware.csrf.CsrfViewMiddleware',
+    # 'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -175,10 +175,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # ]
 
 
-CORS_ALLOWED_ORIGINS = [
-    "https://machine-task-frontend.onrender.com",
-     "https://51.20.117.87.sslip.io",
-]
+CORS_ALLOW_ALL_ORIGINS = True
 
 
 
@@ -254,19 +251,11 @@ CSRF_COOKIE_SECURE = not DEBUG
 
 
 
-LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': False,
-    'handlers': {
-        'console': {
-            'class': 'logging.StreamHandler',
-        },
-    },
-    'loggers': {
-        'django.request': {
-            'handlers': ['console'],
-            'level': 'DEBUG',  # change to DEBUG
-            'propagate': True,
-        },
-    },
-}
+STATIC_URL = '/static/'
+
+
+
+DEBUG=True
+
+
+CSRF_TRUSTED_ORIGINS = ['http://51.20.117.87', 'https://51.20.117.87']
